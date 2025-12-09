@@ -24,12 +24,12 @@ public class VeebipoodApplication {
 //10. T 11.11 - Auth  14.00  profile, edit product
 //11. R 14.11 - 14.00 edit product nupp, rollid (customer ei saaks lisada), person superadmin
 //12. E 17.11 - 16.00 My Orders, Makse
-//13. N 27.11 - 14.00 backend serverisse, keskkondade vahetus, frontend serverisse, makse
-//14. E 01.12 - 14.00 cache, emaili saatmine, emaili kinnitamine
-//15. K 03.12 - 09.00  logid
-//16. E 08.12 - 14.00
-//17. N 11.12 - 14.00 veateade, kui rakendus ei käi, veateade kui token aegub
-//18. E 22.12 - 14.00
+//13. N 27.11 - 14.00 backend serverisse, keskkondade vahetus, frontend serverisse
+//14. E 01.12 - 14.00 custom hookid. refresh token + access token.
+//15. K 03.12 - 12.30 kohe kasutajad. shell-script.  makse
+//16. T 09.12 - 09.00 logid, cache, emaili saatmine, emaili kinnitamine
+//17. R 12.12 - 09.00 veateade, kui rakendus ei käi, veateade kui token aegub
+//18. E 23.12 - 10.00-11.30
 
 // mobiilirakendused?
 // Figma -> disaineriga kohtumine

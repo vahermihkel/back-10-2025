@@ -61,7 +61,7 @@ public class PersonController {
             throw new RuntimeException("Email is not correct");
         }
         personValidator.validatePassword(person.getPassword());
-        person.setRole(PersonRole.CUSTOMER);
+//        person.setRole(PersonRole.CUSTOMER);
         person.setPassword(bCryptPasswordEncoder.encode(person.getPassword()));
         return personRepository.save(person);
     }
@@ -75,7 +75,14 @@ public class PersonController {
         if (!bCryptPasswordEncoder.matches(loginData.getPassword(), person.getPassword())){
             throw new RuntimeException("Invalid password");
         }
-        return jwtService.generateToken(person);
+        return jwtService.generateToken(person, false);
+    }
+
+    @GetMapping("update-token")
+    public AuthToken updateToken(){
+        Long id = Long.parseLong(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
+        Person person = personRepository.findById(id).orElseThrow();
+        return jwtService.generateToken(person, true);
     }
 
 
@@ -132,5 +139,6 @@ public class PersonController {
         person.setPassword(bCryptPasswordEncoder.encode(updatePassword.getNewPassword()));
         return personRepository.save(person);
     }
+
 
 }
